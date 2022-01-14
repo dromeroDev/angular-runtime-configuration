@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'angular-runtime-configuration';
+export class AppComponent implements OnInit {
+  results: any[] = [];
+
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
+    this.appService.getAll().subscribe((res) => {
+      this.results = res;
+    });
+  }
 }

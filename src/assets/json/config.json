@@ -1,0 +1,5 @@
+{
+  "env": "local",
+  "url_server": "https://pokeapi.co/api/v2/pokemon",
+  "url_server2": "https://rickandmortyapi.com/api/character"
+}
